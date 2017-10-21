@@ -1177,6 +1177,10 @@
   ImplicitNav
   (implicit-nav [this] (pred this)))
 
+(extend-type #?(:clj java.lang.Number :cljs js/Number)
+  ImplicitNav
+  (implicit-nav [this] (nthpath this)))
+
 (extend-type #?(:clj java.util.regex.Pattern :cljs js/RegExp)
   ImplicitNav
   (implicit-nav [this] (regex-nav this)))
